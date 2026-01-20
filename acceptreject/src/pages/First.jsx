@@ -13,7 +13,7 @@ const handleclick=async()=>{
     }
     const requesturl=await axios.post("http://localhost:3000/apis/req",payload)
     if(requesturl.data.success){
-        setstatus("pending......")
+        setstatus(requesturl.data.status)
         return
     }
     setstatus("application failed")
