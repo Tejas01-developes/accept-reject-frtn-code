@@ -44,15 +44,19 @@ const reject=async(name)=>{
 
   return (
     <div>
-  {
+  { req.length >0 ? ( 
 req.map((r,i)=>(
     <div key={i}>
         {r.name}:     
         <strong>{r.status}</strong>
         <button><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRI6XgMKd2_iMityOS59F8HHoQLizCwzz4NQA&s" alt="" onClick={()=>accept(r.name)} /></button>
         <button><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH3oqFQYeq2Jniv1Tzq38wF48wrhyDNdMKbA&s" alt="" onClick={()=>reject(r.name)} /></button>
+
     </div>
 ))
+  ):(
+    <h2>no pending application</h2>
+  )
   }
     </div>
   )
